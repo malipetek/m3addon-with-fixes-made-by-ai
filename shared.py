@@ -1041,7 +1041,10 @@ def layoutInputNodesOf(tree):
 
 
 def createBlenderMaterialForMeshObject(scene, meshObject):
-    if scene.render.engine != 'BLENDER_EEVEE':
+    if 'BLENDER_EEVEE_NEXT' in bpy.types.RenderSettings.bl_rna.properties['engine'].enum_items:
+        if scene.render.engine != 'BLENDER_EEVEE_NEXT':
+            scene.render.engine = 'BLENDER_EEVEE_NEXT'
+    elif scene.render.engine != 'BLENDER_EEVEE':
         scene.render.engine = 'BLENDER_EEVEE'
     im.material.createMaterialForMesh(scene, meshObject.data)
     # createCyclesMaterialForMeshObject(scene, meshObject)

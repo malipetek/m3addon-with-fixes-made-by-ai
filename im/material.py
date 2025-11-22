@@ -72,9 +72,15 @@ def createMaterialForMesh(scene: bt.Scene, mesh: bt.Mesh):
     if normalMapNode is not None:
         tree.links.new(normalMapNode.outputs["Normal"], shaderBSDF.inputs["Normal"])
     if specularTextureNode is not None:
-        tree.links.new(specularTextureNode.outputs["Color"], shaderBSDF.inputs["Specular"])
+        if "Specular IOR Level" in shaderBSDF.inputs:
+             tree.links.new(specularTextureNode.outputs["Color"], shaderBSDF.inputs["Specular IOR Level"])
+        elif "Specular" in shaderBSDF.inputs:
+            tree.links.new(specularTextureNode.outputs["Color"], shaderBSDF.inputs["Specular"])
     if emissiveTextureNode is not None:
-        tree.links.new(emissiveTextureNode.outputs["Color"], shaderBSDF.inputs["Emission"])
+        if "Emission Color" in shaderBSDF.inputs:
+            tree.links.new(emissiveTextureNode.outputs["Color"], shaderBSDF.inputs["Emission Color"])
+        elif "Emission" in shaderBSDF.inputs:
+            tree.links.new(emissiveTextureNode.outputs["Color"], shaderBSDF.inputs["Emission"])
 
     # output
     outputNode = tree.nodes.new("ShaderNodeOutputMaterial")
