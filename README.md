@@ -1,17 +1,5 @@
-**⚠️ THIS SOFTWARE IS OBSOLETE AND NO LONGER MAINTAINED ⚠️**
-
----
-
-* 🚨 DOESN'T WORK WITH BLENDER VERSIONS NEWER THAN **BLENDER v3.6** \
-  *(was tested and developed on earlier releases of v3.x)*
-* 🔥 RECOMMENDED REPLACEMENT 🔗 [**M3Studio**](https://github.com/Solstice245/m3studio) \
-  *(keep in mind it *might* not work on a bleeding edge releaeses of Blender either - consult its docs or issues tab)*
-
-> If you wanna learn more, head to: [State of the development. And why you shouldn't use this addon anymore](https://github.com/SC2Mapster/m3addon/issues/48).
-
----
-
-**⚠️ THIS SOFTWARE IS OBSOLETE AND NO LONGER MAINTAINED ⚠️**
+## AI Fixes
+I have no idea what I'm doing. It worked somehow.
 
 # m3addon - Blender Import-Export for m3 file format.
 
